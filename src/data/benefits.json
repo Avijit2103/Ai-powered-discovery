@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "den-basic",
+      "category": "Dental",
+      "title": "Dental Care - Basic",
+      "coverage": "\u20b910,000/year, cashless at network clinics",
+      "description": "Check-ups, cleaning, fillings. 20% copay for scaling."
+    },
+    {
+      "id": "den-advanced",
+      "category": "Dental",
+      "title": "Dental Care - Advanced",
+      "coverage": "\u20b925,000/year incl. root canal, crowns",
+      "description": "Prior approval required for procedures above \u20b98,000."
+    },
+    {
+      "id": "vision-basic",
+      "category": "Vision",
+      "title": "Vision - Spectacles & Lenses",
+      "coverage": "\u20b95,000/year",
+      "description": "One frame per 24 months; lenses reimbursable annually."
+    },
+    {
+      "id": "vision-lasik",
+      "category": "Vision",
+      "title": "Vision - LASIK Support",
+      "coverage": "\u20b920,000 one-time",
+      "description": "Requires pre-auth and surgeon\u2019s letter."
+    },
+    {
+      "id": "mental-therapy",
+      "category": "Mental Health",
+      "title": "Counselling Sessions",
+      "coverage": "8 sessions/year, no copay",
+      "description": "Confidential therapy via EAP partners."
+    },
+    {
+      "id": "opd-general",
+      "category": "OPD",
+      "title": "OPD - General Consultation",
+      "coverage": "\u20b93,000/visit, 6 visits/year",
+      "description": "Includes GP, common illnesses, minor injuries."
+    }
+  ]
+}
