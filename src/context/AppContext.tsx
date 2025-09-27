@@ -107,24 +107,22 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setScreen('list')
   }
 
-  async function submitClarification(note: string) {
-  setClarification(note)
+async function submitClarification(note: string) {
   setClassifying(true)
-  const combined = userInput + ' Additional detail: ' + note
+  const combined = `${userInput}. Additional detail: ${note}`
+
   const cat = await classifyNeed(combined)
+
   if (cat === 'Unknown') {
     setClassifying(false)
-    setNeedsClarification(true)
-    setScreen('clarify')
     return
   }
+
   setCategory(cat)
   setBenefits(getBenefitsByCategory(cat))
-  setNeedsClarification(false)
   setClassifying(false)
   setScreen('list')
 }
-
 function skipClarification() {
   setNeedsClarification(false)
   setCategory('Unknown')
