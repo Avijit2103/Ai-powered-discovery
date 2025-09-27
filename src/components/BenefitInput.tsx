@@ -23,7 +23,7 @@ export default function BenefitInput() {
           disabled={classifying}
         />
         <div className="actions">
-          <button type="submit" className="primary" disabled={classifying}>Find benefits</button>
+          <button type="submit" className="primary" disabled={classifying}>Classify and show benefits</button>
           <button type="button" className="ghost" onClick={() => setText('')} disabled={classifying}>Clear</button>
         </div>
         <div className="footer-note">Tip: Avoid personal identifiers. Keep it simple: symptom + context.</div>
