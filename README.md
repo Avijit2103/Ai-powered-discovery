@@ -125,6 +125,4 @@ Generated using **category-specific templates**.
 
 ---
 
-## 📜 License
 
-MIT License © 2025
