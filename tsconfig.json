@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020",                                /* Change: Modern target for Vite builds. */
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],          /* ADDED: Include browser and modern JS types. */
+    "jsx": "react-jsx",                                /* ADDED: Required for React projects. */
+    "useDefineForClassFields": true,                   /* ADDED: Standard for modern JS classes. */
+
+    /* Modules */
+    "module": "ESNext",                                /* Change: Use ES Modules for bundling. */
+    "moduleResolution": "bundler",                     /* ADDED: Recommended for Vite/bundler environment. */
+    "allowImportingTsExtensions": true,                /* ADDED: Necessary for modern module resolution. */
+    "resolveJsonModule": true,                         /* ADDED: Useful for importing JSON data. */
+    "isolatedModules": true,                           /* ADDED: Required by some bundlers to ensure files are standalone. */
+    
+    /* Emit */
+    "noEmit": true,                                    /* ADDED: CRITICAL - Tells tsc to ONLY type check, NOT generate JS files. Vite handles generation. */
+    // "outDir": "./",                                  /* Not needed since "noEmit" is true */
+
+    /* Interop Constraints */
+    "esModuleInterop": true,                           /* Keep: Helps with CommonJS interop. */
+    "forceConsistentCasingInFileNames": true,          /* Keep: Good practice. */
+
+    /* Type Checking */
+    "strict": true,                                    /* Keep: Best practice for strong typing. */
+    
+    /* Completeness */
+    "skipLibCheck": true                               /* Keep: Speeds up compilation by skipping checks of node_modules types. */
+  },
+  
+  // You MUST tell the compiler which files to include
+  "include": ["src"], 
+  
+  // If you have a separate config for your Node/backend files, you would reference it here:
+  // "references": [{ "path": "./tsconfig.node.json" }] 
+}
