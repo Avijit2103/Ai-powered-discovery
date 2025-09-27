@@ -40,14 +40,22 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [planning, setPlanning] = useState(false)
 
   async function submitInput(text: string) {
-    setUserInput(text)
-    setClassifying(true)
-    setScreen('list')
-    const cat = await classifyNeed(text)
-    setCategory(cat)
-    setBenefits(getBenefitsByCategory(cat))
+  setUserInput(text)
+  setClassifying(true)
+  setScreen('list')
+
+  const cat = await classifyNeed(text)
+
+  if (cat === 'Unknown') {
     setClassifying(false)
+    setScreen('clarify')        
+    return
   }
+
+  setCategory(cat)
+  setBenefits(getBenefitsByCategory(cat))
+  setClassifying(false)
+}
 
   async function selectBenefit(b: Benefit) {
     setSelected(b)
@@ -60,13 +68,21 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }
 
   async function regenerateClassification() {
-    if (!userInput) return
-    setClassifying(true)
-    const cat = await classifyNeed(userInput + ' ')
-    setCategory(cat)
-    setBenefits(getBenefitsByCategory(cat))
+  if (!userInput) return
+  setClassifying(true)
+
+  const cat = await classifyNeed(userInput)
+
+  if (cat === 'Unknown') {
     setClassifying(false)
+    setScreen('clarify')       
+    return
   }
+
+  setCategory(cat)
+  setBenefits(getBenefitsByCategory(cat))
+  setClassifying(false)
+}
 
   async function regeneratePlan() {
     if (!selected) return
